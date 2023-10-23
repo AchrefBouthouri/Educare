@@ -1,0 +1,7 @@
+-------------------------------------------------------------------------------
+Test set: com.pi.roomservice.RoomServiceApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.494 s <<< FAILURE! - in com.pi.roomservice.RoomServiceApplicationTests
+com.pi.roomservice.RoomServiceApplicationTests  Time elapsed: 0.493 s  <<< ERROR!
+java.lang.IllegalStateException: Could not find a valid Docker environment. Please see logs and check configuration
+

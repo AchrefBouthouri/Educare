@@ -1,0 +1,29 @@
+package com.pidev.esprit.model;
+
+import lombok.*;
+
+import javax.persistence.*;
+import java.io.Serializable;
+import java.util.Date;
+
+@Entity
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
+@EqualsAndHashCode
+public class MenuPreferences implements Serializable {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    long id;
+    String mail;
+    @Temporal(TemporalType.DATE)
+    Date dateDcreation;
+
+
+
+
+
+
+
+}
