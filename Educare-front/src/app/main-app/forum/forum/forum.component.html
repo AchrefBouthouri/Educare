@@ -1,0 +1,144 @@
+<body>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+<div *ngIf="connectedUserinfo">
+  <p>Username: {{ connectedUserinfo.username }}</p>
+  <p>Email: {{ connectedUserinfo.email }}</p>
+  <!-- Access other properties as needed -->
+</div>
+<div class="container bootdey">
+  <h1>FORUM</h1>
+<div class="col-md-12 bootstrap snippets">
+<div class="panel">
+  <div class="panel-body">
+    <a class="media-left" href="#"><img class="img-circle img-sm" alt="Profile Picture" src="https://bootdey.com/img/Content/avatar/avatar1.png"></a>
+    <form (submit)="addComment(sujet.value, description.value)">
+  <textarea class="form-control" rows="2" cols="100" placeholder="What's the Topic" #sujet></textarea>
+  <textarea class="form-control" rows="3" cols="170" placeholder="What are you thinking?" #description></textarea>
+  <div class="mar-top clearfix">
+    <button class="btn btn-sm btn-primary pull-right" type="submit"><i class="fa fa-pencil fa-fw"></i> Share</button>
+  </div>
+</form>
+
+    
+      
+
+      
+    </div>
+ </div>
+</div>
+<div class="panel">
+    <div class="panel-body">
+    <!-- Newsfeed Content -->
+    <!--===================================================-->
+    <div class="panel" *ngFor="let comment of comments">
+      <a class="media-left" href="#">
+        <img class="img-circle img-sm" alt="Profile Picture" src="https://bootdey.com/img/Content/avatar/avatar1.png">
+      </a>
+      <div class="media-body">
+        <div class="mar-btm">
+          <a href="#" class="btn-link text-semibold media-heading box-inline">{{ getUsername(comment.iduser) }}</a>
+          <p class="text-muted text-sm" ><a></a> {{ comment.createdAt | timesince }}</p>
+        </div>
+        <p>{{ comment.description }}</p>
+        <p>{{ comment.subComments }}</p>
+        <div class="pad-ver">
+          <div class="d-flex flex-row justify-content-between align-items-center">
+            <div class="d-flex flex-row">
+              <div class="like p-3 cursor" (click)="voteComment(comment.idComm, 'like')">
+                <i class="fa fa-thumbs-o-up"></i>
+                <span class="ml-1">Like {{comment.upvotes}}</span>
+              </div>
+              
+              <div class="dislike p-3 cursor" (click)="voteComment(comment.idComm, 'dislike')">
+                <i class="fa fa-thumbs-o-down"></i>
+                <span class="ml-1">Dislike {{comment.downvotes}}</span>
+              </div>
+              <div class="comment p-3 cursor">
+                <i class="fa fa-commenting-o"></i>
+                <span class="ml-1" (click)="toggleReplyInput(comment.idComm)">reply</span>
+              </div>
+              <div class="reply-form p-3" *ngIf="comment.showReplyInput">
+                <form (submit)="replytocomment(description.value,comment.idComm)">
+                  <div class="form-group">
+                   
+                    <textarea class="form-control" rows="2" cols="50" placeholder="type ur comment" #description></textarea>
+                  </div>
+                  <button type="submit" class="btn btn-sm btn-primary pull-right" >Reply</button>
+                </form>
+              </div>
+              
+
+            </div>
+          </div>
+         
+        </div>
+        <div class="comment p-3 cursor"><i class="fa fa-commenting-o"></i><span class="ml-1" (click)="showSubComments(comment.idComm)"> Show replies</span></div>
+      
+        <hr>
+        <br>
+        <br>
+        <div *ngIf="comment.showSubCommentsFlag">
+          <div *ngFor="let subComment of subComments">
+            <div class="media-block">
+              <a class="media-left" href="#"><img class="img-circle img-sm" alt="Profile Picture" src="https://bootdey.com/img/Content/avatar/avatar2.png"></a>
+              <div class="media-body">
+                <div class="mar-btm">
+                  <a href="#" class="btn-link text-semibold media-heading box-inline">{{ getUsername(subComment.iduser) }}</a>
+                  <p class="text-muted text-sm"><i class="fa fa-mobile fa-lg"></i> {{subComment.createdAt|timesince}}</p>
+                </div>
+                <p>{{subComment.description}}</p>
+                <div class="pad-ver">
+                  <div class="d-flex flex-row justify-content-between align-items-center">
+                    <div class="d-flex flex-row">
+                      <div class="like p-3 cursor" (click)="voteComment(subComment.idComm, 'like')">
+                        <i class="fa fa-thumbs-o-up"></i>
+                        <span class="ml-1">Like {{subComment.upvotes}}</span>
+                      </div>
+                      
+                      <div class="dislike p-3 cursor" (click)="voteComment(subComment.idComm, 'dislike')">
+                        <i class="fa fa-thumbs-o-down"></i>
+                        <span class="ml-1">Dislike {{subComment.downvotes}}</span>
+                      </div>
+                      <div class="comment p-3 cursor">
+                        <i class="fa fa-commenting-o"></i>
+                        <span class="ml-1" (click)="togglesubReplyInput(subComment.idComm)">reply</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="reply-form p-3" *ngIf="subComment.showReplyInput">
+                  <form (submit)="replytocomment(description.value, subComment.idComm)">
+                    <div class="form-group">
+                      <textarea class="form-control" rows="2" cols="50" placeholder="type your comment" #description></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-sm btn-primary pull-right">Reply</button>
+                  </form>
+                </div>
+                <div class="comment p-3 cursor"><i class="fa fa-commenting-o"></i><span class="ml-1" (click)="showSubComments(subComment.idComm)"> Show replies</span></div>
+                <hr>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Comments -->
+        <div>
+        
+
+       
+        </div>
+      </div>
+    </div>
+    <!--===================================================-->
+    <!-- End Newsfeed Content -->
+
+
+    <!-- Newsfeed Content -->
+    <!--===================================================-->
+   
+    <!--===================================================-->
+    <!-- End Newsfeed Content -->
+  </div>
+</div>
+
+

@@ -1,0 +1,33 @@
+<!-- ============================================================== -->
+<!-- row -->
+<!-- ============================================================== -->
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<div fxLayout="row" fxLayoutWrap="wrap">
+  <!-- Card column -->
+  <div fxFlex.gt-sm="100%" fxFlex="100">
+    <mat-card>
+      <mat-card-content>
+        <mat-card-title>Room Managment </mat-card-title>
+        <!--        <mat-card-subtitle> <code class=""><a href="https://material.angular.io/components/tabs/overview">Official Component</a></code></mat-card-subtitle>-->
+      </mat-card-content>
+      <mat-tab-group>
+        <mat-tab label="Create room"><mat-card-content><app-create-room></app-create-room></mat-card-content></mat-tab>
+        <mat-tab label="Room List"><mat-card-content><app-get-all-rooms></app-get-all-rooms></mat-card-content></mat-tab>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title> Personal data </mat-panel-title>
+            <mat-panel-description> Type your name and age </mat-panel-description>
+          </mat-expansion-panel-header>
+          <mat-form-field>
+            <input matInput placeholder="First name"> </mat-form-field>
+          <mat-form-field>
+            <input matInput placeholder="Age"> </mat-form-field>
+        </mat-expansion-panel>
+
+      </mat-tab-group>
+    </mat-card>
+  </div>
+</div>
+

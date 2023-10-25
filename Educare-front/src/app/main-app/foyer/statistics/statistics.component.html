@@ -1,0 +1,19 @@
+<!-- statistics.component.html -->
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<div>
+  <h2>Statistics</h2>
+  <div>
+    <label for="start-date">Start Date:</label>
+    <input type="date" id="start-date" [(ngModel)]="startDate">
+  </div>
+  <div>
+    <label for="end-date">End Date:</label>
+    <input type="date" id="end-date" [(ngModel)]="endDate">
+  </div>
+  <button (click)="getStatistics()">Get Statistics</button>
+  <div *ngIf="statistics">
+    <canvas id="numBookingsPerRoomChart"></canvas>
+  </div>
+</div>

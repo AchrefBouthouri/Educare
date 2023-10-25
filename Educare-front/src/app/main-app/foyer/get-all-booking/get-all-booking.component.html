@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bookings List</title>
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+</head>
+<body>
+
+<div fxLayout="column" fxLayoutGap="20px">
+  <mat-form-field>
+    <input matInput placeholder="Search" [(ngModel)]="searchTerm" (input)="filterBookings()">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Search by</mat-label>
+    <mat-select [(ngModel)]="searchOption" (selectionChange)="filterBookings()">
+      <mat-option value="id">Booking Id</mat-option>
+      <mat-option value="roomId">Room Id</mat-option>
+      <mat-option value="userEmail">User Email</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <div class="table-responsive">
+    <table class="table">
+      <thead>
+      <tr>
+        <th>Booking Id</th>
+        <th>Room Id</th>
+        <th>Start Date</th>
+        <th>End Date</th>
+        <th>User Email</th>
+        <th>Number</th>
+        <th>Paid</th>
+        <th>Auto Renewed</th>
+        <th>Delete</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let booking of filteredBookings">
+        <td>{{ booking.bookingId }}</td>
+        <td>{{ booking.roomId }}</td>
+        <td>{{ booking.startDate }}</td>
+        <td>{{ booking.endDate }}</td>
+        <td>{{ booking.userEmail }}</td>
+        <td>{{ booking.totalPrice }}</td>
+        <td>{{ booking.paid }}</td>
+        <td>{{ booking.autoRenewed }}</td>
+        <td>
+          <div class="delete-container">
+            <button class="btn btn-danger" (click)="deleteBooking(booking.bookingId)" [disabled]="deletingBooking">
+              <span *ngIf="!deletingBooking">Delete</span>
+            </button>
+            <mat-spinner *ngIf="deletingBooking" diameter="16" color="accent"></mat-spinner>
+          </div>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

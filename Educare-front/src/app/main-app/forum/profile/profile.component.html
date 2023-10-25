@@ -1,0 +1,14 @@
+<!-- profile.component.html -->
+<div class="profile-form">
+    <h2>Create Profile</h2>
+    <form (ngSubmit)="createProfile()">
+      <div class="form-group">
+        <label for="biography">Biography</label>
+        <textarea id="biography" name="biography" [(ngModel)]="biography" required></textarea>
+      </div>
+      <div class="form-group">
+        <button type="submit">Create Profile</button>
+      </div>
+    </form>
+  </div>
+  

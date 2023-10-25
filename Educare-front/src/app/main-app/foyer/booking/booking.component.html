@@ -1,0 +1,24 @@
+<!-- ============================================================== -->
+<!-- row -->
+<!-- ============================================================== -->
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<div fxLayout="row" fxLayoutWrap="wrap">
+  <!-- Card column -->
+  <div fxFlex.gt-sm="100%" fxFlex="100">
+    <mat-card>
+      <mat-card-content>
+        <mat-card-title>Booking Managment </mat-card-title>
+        <!--        <mat-card-subtitle> <code class=""><a href="https://material.angular.io/components/tabs/overview">Official Component</a></code></mat-card-subtitle>-->
+      </mat-card-content>
+      <mat-tab-group>
+        <mat-tab label="Booking History"><mat-card-content><app-get-all-booking></app-get-all-booking></mat-card-content></mat-tab>
+        <mat-tab label="New Booking"><mat-card-content><app-create-booking></app-create-booking></mat-card-content></mat-tab>
+        <mat-tab label="Extend Booking"><mat-card-content><app-extend-booking></app-extend-booking></mat-card-content></mat-tab>
+        <mat-tab label="Statistics"><mat-card-content><app-statistics></app-statistics></mat-card-content></mat-tab>
+      </mat-tab-group>
+    </mat-card>
+  </div>
+</div>
+

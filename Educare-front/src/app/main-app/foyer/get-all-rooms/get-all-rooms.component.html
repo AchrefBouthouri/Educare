@@ -1,0 +1,85 @@
+<mat-card>
+  <mat-card-content>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bookings List</title>
+
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+</head>
+<div fxLayout="row wrap">
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <h1>Rooms</h1>
+      <form (submit)="filterRooms()">
+        <div class="search-container">
+          <mat-form-field class="search-input">
+            <input matInput placeholder="Search" [(ngModel)]="searchTerm" name="searchTerm">
+          </mat-form-field>
+          <mat-form-field class="search-select">
+            <mat-select [(ngModel)]="searchOption" name="searchOption">
+              <mat-option *ngFor="let option of ['roomNumber', 'roomType', 'description', 'surface', 'price']" [value]="option">{{option}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <button mat-button type="submit">Search</button>
+        </div>
+      </form>
+    </div>
+   </div>
+  <div class="row">
+    <div  *ngFor="let room of rooms" class="col-md-4">
+      <div class="col-md-10 col-sm-10 card">
+<!--        <img src="https://via.placeholder.com/190" class="card-img-top" alt="..." />-->
+        <img  src="assets/img/img_6.png" class="card-img-top" alt="..." >
+        <div class="col-md-3" class="card-body">
+          <h5 class="card-title">Number: {{ room.roomNumber }}</h5>
+          <p class="card-text">Description: {{ room.description }}</p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Type: {{ room.roomType }}</li>
+          <li class="list-group-item">Surface: {{ room.surface }} m²</li>
+          <li class="list-group-item">Price: {{ room.price }} €</li>
+          <app-delete-room [room]="room" (roomDeleted)="getRooms()"></app-delete-room>
+          <button class="btn btn-primary" (click)="openBookingForm(room)">Book</button>
+          <button mat-icon-button (click)="openBookingForm(room.id)"></button>
+
+          <!--        ///////rtr-->
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title style="color: #1e88e5">Update Room {{ room.roomNumber }}</mat-panel-title>
+            </mat-expansion-panel-header>
+            <mat-form-field>
+              <mat-label>Type</mat-label>
+              <mat-select [(ngModel)]="room.roomType" name="roomType">
+                <mat-option *ngFor="let type of roomTypes" [value]="type">{{ type }}</mat-option>
+              </mat-select>
+            </mat-form-field>
+            <mat-form-field>
+              <mat-label>Description</mat-label>
+              <input matInput type="text" [(ngModel)]="room.description" name="description">
+            </mat-form-field>
+            <mat-form-field>
+              <mat-label>Surface (m²)</mat-label>
+              <input matInput type="number" [(ngModel)]="room.surface" name="surface">
+            </mat-form-field>
+            <mat-form-field>
+              <mat-label>Price (€)</mat-label>
+              <input matInput type="number" [(ngModel)]="room.price" name="price">
+            </mat-form-field>
+            <button mat-raised-button color="primary" (click)="updateRoom(room.roomNumber, room)">Update</button>
+          </mat-expansion-panel>
+          <!--        //////sd/-->
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+</html>
+  </mat-card-content>
+
+</mat-card>
