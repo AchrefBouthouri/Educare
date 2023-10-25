@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="form-container">
+    <form [formGroup]="resetPasswordForm" (ngSubmit)="mailReset()">
+      <mat-form-field appearance="fill">
+        <mat-label>Email</mat-label>
+        <input type="email" formControlName="email" matInput>
+        <mat-error *ngIf="resetPasswordForm?.get('email')?.invalid">Please enter a valid email address</mat-error>
+
+      </mat-form-field>
+      <button type="submit" mat-raised-button color="primary" [disabled]="resetPasswordForm.invalid">Reset Password</button>
+    </form>
+  </div>
+</div>

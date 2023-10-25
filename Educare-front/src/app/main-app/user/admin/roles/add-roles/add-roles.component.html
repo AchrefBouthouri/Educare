@@ -1,0 +1,14 @@
+<mat-form-field class="example-chip-list" appearance="fill">
+  <mat-label>Roles</mat-label>
+  <mat-chip-list #chipList aria-label="Role selection">
+    <mat-chip *ngFor="let role of roles" (removed)="onDeleteRole(role.id)">
+      {{role.name}}
+      <button matChipRemove >
+        <mat-icon>cancel</mat-icon>
+      </button>
+    </mat-chip>
+    <input placeholder="New role..."
+           [matChipInputFor]="chipList"
+           (matChipInputTokenEnd)="add($event)"/>
+  </mat-chip-list>
+</mat-form-field>

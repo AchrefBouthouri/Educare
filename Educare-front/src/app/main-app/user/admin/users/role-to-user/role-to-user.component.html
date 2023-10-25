@@ -1,0 +1,12 @@
+<form [formGroup]="roleToUserForm"   class="example-form">
+  <mat-form-field  class="example-full-width" appearance="fill">
+    <mat-label>Username</mat-label>
+    <input cFormControl formControlName="username" matInput  placeholder="Ex. korbi98" value="">
+  </mat-form-field>
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>RoleName</mat-label>
+    <input cFormControl formControlName="roleName" matInput  placeholder="Ex. Adminstrateur" value="">
+  </mat-form-field>
+
+  <button cButton (click)="roleToUser()" mat-raised-button color="secsess">Affect</button>
+</form>
