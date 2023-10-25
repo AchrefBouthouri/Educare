@@ -1,0 +1,19 @@
+.meal-reminder {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  text-align: center;
+}
+
+.meal-reminder__title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.meal-reminder__time {
+  font-size: 30px;
+  font-weight: bold;
+  margin: 0;
+}

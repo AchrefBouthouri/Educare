@@ -1,0 +1,29 @@
+<html>
+<h2>Top Meals</h2>
+<body>
+<div *ngIf="sortedStats.length === 0">No meals ordered yet.</div>
+<table *ngIf="sortedStats.length > 0">
+  <thead>
+  <tr>
+    <th>Meal</th>
+    <th>Orders</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let mealStat of sortedStats">
+    <td>{{ mealStat[0] }}</td>
+    <td>{{ mealStat[1] }}</td>
+
+  </tr>
+
+
+  </tbody>
+</table>
+</body>
+
+
+</html>
+
+
+<canvas id="mealChart"></canvas>
+

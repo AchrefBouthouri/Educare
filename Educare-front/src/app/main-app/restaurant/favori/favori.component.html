@@ -1,0 +1,27 @@
+<div fxLayout="row" fxLayoutWrap="wrap">
+  <div fxFlex.gt-sm="100%" fxFlex="100">
+  <mat-card-content>
+    <mat-card-title>Fovorite Menu</mat-card-title>
+    <mat-card-subtitle>Manage your favorite menu</mat-card-subtitle>
+    <!-- Card column -->
+  </mat-card-content>
+  <mat-card *ngFor="let menu of menus">
+    <mat-card-content>
+      <mat-card-title>Menu ID: {{ menu.id }}</mat-card-title>
+      <p>Menu: {{ menu.name }}</p>
+      <p>Price: {{ menu.price }}</p>
+      <p>Description: {{ menu.description }}</p>
+      <p>Calories: {{ menu.calories }}</p>
+      <button mat-raised-button color="primary" (click)="showUpdateForm(menu.id)">Update</button>
+
+      <div *ngIf="showForm">
+        <form>
+          <input matInput placeholder="Mail" name="mail" [(ngModel)]="mail">
+          <button mat-raised-button color="primary" (click)="createMenuPreference()">Save</button>
+          <button mat-raised-button (click)="showForm = false">Cancel</button>
+        </form>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
+</div>

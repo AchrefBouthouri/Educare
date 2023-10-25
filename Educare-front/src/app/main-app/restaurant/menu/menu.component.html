@@ -1,0 +1,128 @@
+<mat-card>
+	<mat-card-content>    
+	<mat-card-title>Reclamation</mat-card-title>
+            <div fxLayout="row" fxLayoutWrap="wrap">
+                <div fxFlex.gt-sm="100%" fxFlex="100">
+                        <mat-card>
+                               
+                                <mat-tab-group>
+                                        
+                                                       <mat-card>
+    <mat-card-content>
+      <mat-card-title>menu</mat-card-title>
+      
+    </mat-card-content>
+  </mat-card>
+
+                                        
+                        
+                                    
+                                        
+                                        <mat-card-content>
+                                                <mat-tab label="aaaaaaaa"><mat-card-content><mat-card>
+                                                        <mat-card-content>
+                                                          <mat-card-title>menu</mat-card-title>
+                                                          <div fxLayout="row" fxLayoutWrap="wrap">
+                                                            <!-- Card column -->
+                                                            <div fxFlex.gt-sm="100%" fxFlex="100">
+                                                              <mat-card *ngFor="let menu of menus">
+                                                                <mat-card-content>
+                                                                  <mat-card-title>Menu ID: {{ menu.id }}</mat-card-title>
+                                                                  <p>Menu: {{ menu.name }}</p>
+                                                                  <p>Price: {{ menu.price }}</p>
+                                                                  <p>Description: {{ menu.description }}</p>
+                                                                  <p>Calories: {{ menu.calories }}</p>
+                                                                  <button mat-raised-button color="primary" (click)="showUpdateForm(menu.id)">Update</button>
+                                                                  <button mat-button color="warn" (click)="deleteM(menu.id)">delete</button>
+
+                                                    <mat-card-content>
+
+                       <div *ngIf="showForm">
+
+                               <mat-card-title>Update Capacity</mat-card-title>
+                               <form>
+                                       <mat-form-field>
+                                               <input matInput placeholder="Menu Name" name="menuName" [(ngModel)]="name">
+                                        </mat-form-field>
+                                        <mat-form-field>
+                                                <input matInput placeholder="description" name="description" [(ngModel)]="description">
+                                        </mat-form-field>
+                                        
+                                        <mat-form-field>
+                                                <input matInput placeholder="price" name="price" [(ngModel)]="price">
+                                        </mat-form-field>
+                                        <mat-form-field>
+                                                <input matInput placeholder="calories" name="calories" [(ngModel)]="calories">
+                                        </mat-form-field>
+                                        <button mat-raised-button color="primary" (click)="updateM()">Save</button>
+                                        <button mat-raised-button (click)="showForm = false">Cancel</button>
+                                </form>
+                        </div>                         
+                        </mat-card-content>
+                                                    
+                                                    
+                                                                  
+                                                               
+                                                                </mat-card-content>
+                                                              </mat-card>
+                                                            </div>
+                                                          </div>
+                                                        </mat-card-content>
+                                                      </mat-card>
+                                                    
+                                                    </mat-card-content></mat-tab>
+                                                <mat-tab label="create Menu">
+                                                        <mat-card-content>
+                                                          <mat-card>
+                                                            <mat-card-content>
+
+                                            
+                                                              <mat-card-title>Create Menu</mat-card-title>
+                                                              <form (ngSubmit)="createM()">
+                                                                <mat-form-field>
+                                                                  <input matInput placeholder="Menu Name" name="menuName" [(ngModel)]="name">
+                                                                </mat-form-field>
+                                                                <mat-form-field>
+                                                                  <input matInput placeholder="description" name="description" [(ngModel)]="description">
+                                                                </mat-form-field>
+            
+                                                                <mat-form-field>
+                                                                  <input matInput placeholder="price" name="price" [(ngModel)]="price">
+                                                                </mat-form-field>
+                                                                <mat-form-field>
+                                                                  <input matInput placeholder="calories" name="calories" [(ngModel)]="calories">
+                                                                </mat-form-field>
+                                                                <button mat-raised-button color="primary" type="submit">Create Menu</button>
+                                                              </form>
+                                                            </mat-card-content>
+                                                          </mat-card>
+                                                        </mat-card-content>
+                                                      </mat-tab>
+                                        </mat-card-content>
+                                       
+                                </mat-tab-group>
+                        </mat-card>    
+                </div>
+        </div>
+	</mat-card-content>
+
+</mat-card>
+
+<div>
+  <mat-card-content>
+    <mat-tab label="aaaaaaab"><mat-card-content><mat-card>
+            <mat-card-content>
+              <mat-card-title>MenuDeSemaine</mat-card-title>
+              <div fxLayout="row" fxLayoutWrap="wrap">
+                <!-- Card column -->
+                <div fxFlex.gt-sm="100%" fxFlex="100">
+                  <mat-card *ngFor="let menu of menus">
+                    <mat-card-content>
+                      <mat-card-title>Menu ID: {{ menu.id }}</mat-card-title>
+                      <p>Menu: {{ menu.name }}</p>
+                      <button mat-raised-button color="primary" (click)="showUpdateForm(menu.id)">Update</button>
+                      
+
+        <mat-card-content>
+        
+

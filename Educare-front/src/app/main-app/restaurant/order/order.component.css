@@ -1,0 +1,54 @@
+.example-button-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+.search-btn {
+  border: 1px solid black;
+
+  margin-left: 900px;
+  border-radius: 2px;
+  padding: 1px 40px;
+}
+
+.mat-radio-group {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 16px;
+}
+.radio-group-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.mat-radio-button {
+  margin-right: 16px;
+}
+
+.search-btn {
+  border: 1px solid black;
+  margin-left: 8px;
+  border-radius: 2px;
+  padding: 1px 40px;
+}
+
+.search-box {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  width: 300px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.search-box:focus {
+  outline: none;
+  border-color: #3f51b5;
+  box-shadow: 0 2px 4px rgba(63, 81, 181, 0.4);
+}
+
+

@@ -1,0 +1,41 @@
+    <div fxLayout="row">
+    <div>
+      <div fxLayout="row" fxLayoutWrap="wrap">
+        <!-- Card column -->
+        <div fxFlex.gt-sm="100%" fxFlex="100">
+      <mat-card>
+        <mat-card-content>
+          <mat-card-title>Appointment</mat-card-title>
+          <mat-card-subtitle>Manage your appointments</mat-card-subtitle>
+          <mat-form-field>
+            <input matInput [matDatepicker]="picker" placeholder="Search by creation date" [(ngModel)]="searchDate">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+          <button mat-raised-button color="primary" (click)="search()">Search</button>
+          <mat-list-item  class="reclamation-list"> 
+            <div *ngFor="let rdv of filteredRdvList">
+              <div class="reclamation-details" class="reclamation-item">
+                <h3 class="reclamation-description">{{rdv.description}}</h3>
+                <p class="reclamation-created-at">RDV date: {{rdv.date | date:'short'}}</p>
+                <p class="reclamation-created-by">Reclamation: {{rdv.reclamation.id}}</p> 
+                <p class="reclamation-created-by">Technicien:   {{rdv.technicien_id}}</p>
+              </div>
+              <!-- <div class="reclamation-actions">
+                <button *ngIf="reclamation.availablity" mat-icon-button color="primary" (click)="closeReclamation(reclamation.id)">
+                  <mat-icon>check_circle_outline</mat-icon>
+                </button>
+                <button *ngIf="!reclamation.availablity" mat-icon-button style="color: green;">
+                  <mat-icon>check_circle_outline</mat-icon>
+                </button>
+                <button mat-icon-button color="warn" (click)="deleteReclamation(reclamation.id)">
+                  <mat-icon>delete_outline</mat-icon>
+                </button>
+              </div> -->
+            </div>
+          </mat-list-item>
+        </mat-card-content>        
+      </mat-card>
+    </div>
+  </div>
+  

@@ -1,0 +1,242 @@
+
+
+
+<header id="header" class="fixed-top d-flex align-items-cente">
+
+  <div class="container-fluid container-xl d-flex align-items-center justify-content-lg-between">
+
+    <h1 class="logo me-auto me-lg-0">
+      <img class="img" src='assets/images/esprit2.jpg' width="100" height="80" style="margin-right: 10px"><a  href="/restaurant">Home</a></h1>
+    <nav id="navbar" class="navbar order-last order-lg-0">
+
+
+
+
+      <i class="bi bi-list mobile-nav-toggle"></i>
+    </nav>
+  </div>
+</header>
+<section id="hero" class="d-flex align-items-center">
+  <div class="container position-relative text-center text-lg-start" data-aos="zoom-in" data-aos-delay="100">
+    <div class="row">
+      <div class="col-lg-8">
+        <h1>Here you can calculate your <span>calories</span></h1>
+
+      </div>
+    </div>
+  </div>
+</section>
+<main id="main">
+  <section id="about" class="about">
+    <div class="container" data-aos="fade-up">
+      <div class="row">
+        <div class="col-lg-6 order-1 order-lg-2" data-aos="zoom-in" data-aos-delay="100">
+        </div>
+        <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
+
+
+
+        </div>
+
+
+
+      </div>
+    </div>
+  </section>
+  <section id="why-us" class="why-us">
+    <div class="container" data-aos="fade-up">
+      <div class="section-title">
+        <h2>How </h2>
+        <p>it works</p>
+      </div>
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="box" data-aos="zoom-in" data-aos-delay="100">
+            <span>01</span>
+            <h4>choose your meal</h4>
+            <p>choose which meal you are going to consume </p>
+          </div>
+        </div>
+        <div class="col-lg-4 mt-2 ">
+          <div class="box" data-aos="zoom-in" data-aos-delay="200">
+            <span>02</span>
+            <h4>fill in the other details</h4>
+            <p>fill in your hight age and sex </p>
+          </div>
+        </div>
+        <div class="col-lg-4 mt-4 mt-lg-0">
+          <div class="box" data-aos="zoom-in" data-aos-delay="300">
+            <span>03</span>
+            <h4>There you go</h4>
+            <p>it's as easy as that</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="menu" class="menu section-bg" style="background-color: #D5CABD">
+    <div class="container" data-aos="fade-up" >
+      <div class="section-title">
+        <h2 style=" color: #f1effd;">Lest's get </h2>
+        <p>started</p>
+      </div>
+      <div class="row" data-aos="fade-up" data-aos-delay="100">
+        <div class="col-lg-12 d-flex justify-content-center">
+          <div class="form-container">
+            <div class="form-field">
+              <label for="mealName">Meal Name:</label>
+              <input type="text" id="mealName" [(ngModel)]="mealName" name="mealName"
+                     [ngClass]="{'is-invalid': mealNameInput.invalid && (mealNameInput.dirty || mealNameInput.touched)}"
+                     #mealNameInput="ngModel"
+                     required
+                     [class.form-control]="true"
+                     placeholder="Enter mealName">
+              <div class="invalid-feedback">
+                <div *ngIf="mealNameInput.errors?.required">  mealName is required</div>
+
+
+              </div>
+            </div>
+
+            <div class="form-field">
+              <label for="height">Height (in cm):</label>
+              <input type="number" id="height" [(ngModel)]="height" name="height"
+                     [ngClass]="{'is-invalid': heightInput.invalid && (heightInput.dirty || heightInput.touched)}"
+                     #heightInput="ngModel"
+                     [min]="1" [max]="250"
+                     required
+                     [class.form-control]="true"
+                     placeholder="Enter height">
+              <div class="invalid-feedback">
+                <div *ngIf="heightInput.errors?.required">Height is required</div>
+                <div *ngIf="heightInput.errors?.pattern">Invalid input. Please enter numbers only.</div>
+                <div *ngIf="heightInput.errors?.min || heightInput.errors?.max">Height must be between 1 and 250</div>
+              </div>
+            </div>
+
+            <div class="form-field">
+              <label for="weight">weight (in kg):</label>
+              <input type="number" id="weight" [(ngModel)]="weight" name="weight"
+                     [ngClass]="{'is-invalid': weightInput.invalid && (weightInput.dirty || weightInput.touched)}"
+                     #weightInput="ngModel"
+                     [min]="1" [max]="250"
+                     required
+                     [class.form-control]="true"
+                     placeholder="Enter weight">
+              <div class="invalid-feedback">
+                <div *ngIf="weightInput.errors?.required">weight is required</div>
+                <div *ngIf="weightInput.errors?.pattern">Invalid input. Please enter numbers only.</div>
+                <div *ngIf="weightInput.errors?.min || weightInput.errors?.max">weight must be between 1 and 250</div>
+              </div>
+            </div>
+
+            <div class="form-field">
+              <label for="age">age :</label>
+              <input type="number" id="age" [(ngModel)]="age" name="age"
+                     [ngClass]="{'is-invalid': ageInput.invalid && (ageInput.dirty || ageInput.touched)}"
+                     #ageInput="ngModel"
+                     [min]="1" [max]="120"
+                     required
+                     [class.form-control]="true"
+                     placeholder="Enter age">
+              <div class="invalid-feedback">
+                <div *ngIf="ageInput.errors?.required">age is required</div>
+                <div *ngIf="ageInput.errors?.pattern">Invalid input. Please enter numbers only.</div>
+                <div *ngIf="ageInput.errors?.min || ageInput.errors?.max">age must be between 1 and 120</div>
+              </div>
+            </div>
+
+            <div class="form-field">
+              <label for="gender">Gender:</label>
+              <select id="gender" [(ngModel)]="isMale">
+                <option [value]="true">Male</option>
+                <option [value]="false">Female</option>
+              </select>
+            </div>
+
+            <button class="btn" (click)="calculateCaloriePercentage()">Calculate Calorie Percentage</button>
+          </div>
+
+          <div class="result-container" *ngIf="caloriePercentage">
+            <p>
+
+              <ngx-gauge size="400"  thick="7"
+                         cap="round"
+
+                         [type]="gaugeType"
+                         [value]="caloriePercentage"
+                         [label]="gaugeLabel"
+                         [append]="gaugeAppendText"
+                         [markers]="markerConfig"
+                         [thresholds]="thresholdConfig"
+
+              >
+
+
+              </ngx-gauge>
+            </p>
+          </div>
+
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+
+
+
+
+      </div>
+  </section>
+
+
+</main>
+<footer id="footer">
+  <div class="footer-top">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 col-md-6">
+          <div class="footer-info">
+            <h3>Restaurant</h3>
+            <p> Ludhiana <br> Punjab, IND<br><br> <strong>Phone:</strong> +91 **** **** **<br> <strong>Email:</strong> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" >[email&#160;protected]</a><br></p>
+            <div class="social-links mt-3"> <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a> <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a> <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a> <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a> <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a></div>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-6 footer-links">
+          <h4>Useful Links</h4>
+          <ul>
+            <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+            <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
+            <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
+            <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
+            <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6 footer-links">
+          <h4>Our Services</h4>
+          <ul>
+            <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
+            <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
+            <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
+            <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
+            <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4 col-md-6 footer-newsletter">
+          <h4>Our Newsletter</h4>
+          <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
+          <form action="" method="post"> <input type="email" name="email"><input type="submit" value="Subscribe"></form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="copyright"> &copy; Copyright <strong><span>Restaurant</span></strong>. All Rights Reserved</div>
+    <div class="credits"> Designed by <a href="https://therichpost.com/">therichpost</a></div>
+  </div>
+</footer>

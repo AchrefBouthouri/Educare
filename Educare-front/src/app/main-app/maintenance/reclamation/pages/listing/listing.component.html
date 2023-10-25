@@ -1,0 +1,46 @@
+<div fxLayout="row">
+  <div>
+    <mat-card>
+      <mat-card-content>
+        <mat-card-title>Complaint lists</mat-card-title>
+        <mat-form-field>
+          <input matInput placeholder="Search by description" [(ngModel)]="searchDescription" [matAutocomplete]="auto">
+          <mat-autocomplete #auto="matAutocomplete">
+            <mat-option *ngFor="let description of filteredDescriptions" [value]="description">
+              {{description}}
+            </mat-option>
+          </mat-autocomplete>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput [matDatepicker]="picker" placeholder="Search by creation date" [(ngModel)]="searchDate">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <button mat-raised-button color="primary" (click)="search()">Search</button>
+        <mat-list-item *ngFor="let reclamation of filteredReclamationList"> 
+          <div class="reclamation-item">
+            <div class="reclamation-details" (click)="detail(reclamation.id)">
+              <h3 class="reclamation-description">Description: {{reclamation.description}}</h3>
+              <p class="reclamation-created-at">Creation date: {{reclamation.createdAt | date:'medium'}}</p>
+              <p class="reclamation-type">Type: {{reclamation.type}}</p>
+              <p class="reclamation-progress">Progression: {{reclamation.progress}}{{"%"}}</p>
+              <p class="reclamation-priorite">Priorite: {{reclamation.priorite}}</p>
+              <p class="reclamation-created-by">Created by: {{reclamation.createdBy}}</p>
+            </div>
+            <div class="reclamation-actions">
+              <button *ngIf="reclamation.availablity" mat-icon-button color="primary" (click)="closeReclamation(reclamation.id)">
+                <mat-icon>check_circle_outline</mat-icon>
+              </button>
+              <button *ngIf="!reclamation.availablity" mat-icon-button style="color: green;">
+                <mat-icon>check_circle_outline</mat-icon>
+              </button>
+              <button mat-icon-button color="warn" (click)="deleteReclamation(reclamation.id)">
+                <mat-icon>delete_outline</mat-icon>
+              </button>
+            </div>
+          </div>
+        </mat-list-item>
+      </mat-card-content>        
+    </mat-card>
+  </div>
+</div>

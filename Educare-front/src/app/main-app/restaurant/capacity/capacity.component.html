@@ -1,0 +1,96 @@
+<!-- <p>order works!</p> -->
+<mat-card>
+  <mat-card-content>
+    <mat-card-title>restaurant capacity</mat-card-title>
+    <div fxLayout="row" fxLayoutWrap="wrap">
+      <!-- Card column -->
+      <div fxFlex.gt-sm="100%" fxFlex="100">
+        <mat-card>
+
+
+          <mat-card-content>
+          </mat-card-content>
+          <mat-tab-group  >
+            <mat-tab label="show capacity" >
+
+
+
+                <mat-card>
+                  <mat-card-content >
+                    <mat-card-title></mat-card-title>
+                    <div fxLayout="row" fxLayoutWrap="wrap">
+                      <div fxFlex.gt-sm="100%" fxFlex="100">
+                        <mat-card *ngFor="let capacity of capacity">
+                          <mat-card-content>
+                            <mat-card-title>capacity: {{ capacity.value}}</mat-card-title>
+                            <p>capacity id: {{ capacity.id }}</p>
+                            <button mat-button color="warn" (click)="deleteCapacity(capacity.id)">delete</button>
+
+                            <button mat-raised-button color="primary" (click)="showUpdateForm(capacity)">Update</button>
+                          </mat-card-content>
+                        </mat-card>
+                      </div>
+                    </div>
+                  </mat-card-content>
+                </mat-card>
+
+                <mat-card *ngIf="showForm">
+                  <mat-card-content>
+                    <mat-card-title>Update Capacity</mat-card-title>
+                    <form>
+                      <mat-form-field>
+                        <input matInput [(ngModel)]="newValue" name="value" placeholder="New Capacity Value">
+                      </mat-form-field>
+                      <button mat-raised-button color="primary" (click)="updateCapacity()">Save</button>
+                      <button mat-raised-button (click)="showForm = false">Cancel</button>
+                    </form>
+                  </mat-card-content>
+                </mat-card>
+              </mat-tab>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <mat-tab label="add capacity">
+              <mat-card-content>
+                <mat-card>
+                  <mat-card-content>
+                    <form #capacityForm="ngForm" (ngSubmit)="onSubmit(capacityForm)">
+                      <mat-form-field>
+                        <input matInput placeholder="Capacity" name="capacity" required [(ngModel)]="newCapacity">
+                      </mat-form-field>
+                      <button mat-raised-button color="primary" type="submit" [disabled]="!capacityForm.valid">Add Capacity</button>
+                    </form>
+                  </mat-card-content>
+                </mat-card>
+              </mat-card-content>
+            </mat-tab>
+
+
+
+
+
+
+          </mat-tab-group>
+        </mat-card>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>
+
+

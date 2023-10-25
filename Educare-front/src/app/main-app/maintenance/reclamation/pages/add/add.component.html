@@ -1,0 +1,68 @@
+<!-- <p>add works!</p> -->
+<div fxLayout="row" fxLayoutWrap="wrap">
+	<!-- Card column -->
+	<div fxFlex.gt-sm="100%" fxFlex="100">
+		<mat-card>
+			<mat-card-content>
+				<mat-card-title>Create your claim <span class="bg-success text-white rounded font-12 p-l-5 p-r-5">New</span></mat-card-title>
+				<!-- <mat-card-subtitle>If completion of a step in linear stepper is not required, then the <code>optional</code> attribute can be set on <code>mat-step</code>.</mat-card-subtitle> --->
+				<!-- <button mat-raised-button (click)="isOptional = !isOptional"> 
+				  {{!isOptional ? 'Enable optional steps' : 'Disable optional steps'}}
+				</button>  -->
+
+				<mat-horizontal-stepper linear #stepperoptional>
+				  <mat-step [stepControl]="optionalfirstFormGroup">
+				    <form [formGroup]="optionalfirstFormGroup">
+				      <ng-template matStepLabel>Fill in the details of your claim</ng-template>
+				      <mat-form-field>
+				        <textarea matInput placeholder="Description" formControlName="description" required></textarea>
+				      </mat-form-field>
+				      <div>
+				        <button mat-raised-button matStepperNext color="accent">Next</button>
+				      </div>
+				    </form>
+				  </mat-step>
+				  <mat-step [stepControl]="optionalsecondFormGroup" [optional]="isOptional">
+				    <form [formGroup]="optionalsecondFormGroup">
+				      <ng-template matStepLabel>Fill out your address</ng-template>
+								<div class="example-tooltip-host">
+									<span>Choose Type</span>
+									<mat-form-field>
+										<mat-select class="example-select" [(ngModel)]="type" formControlName="type">
+											<mat-option value="ELECTRIQUE">ELECTRIC</mat-option>
+											<mat-option value="EQUIPEMENTS_DE_CUISINE">KITCHEN EQUIPMENT</mat-option>
+											<mat-option value="CHAUFFAGE">HEATING</mat-option>
+											<mat-option value="INFORMATIQUE">COMPUTER SCIENCE</mat-option>
+										</mat-select>
+									</mat-form-field>
+								</div>
+								<div class="example-tooltip-host">
+									<span>Choose The Priority</span>
+									<mat-form-field>
+										<mat-select class="example-select" [(ngModel)]="priority" formControlName="priority">
+											<mat-option value="CRITIQUE">Critical</mat-option>
+											<mat-option value="HAUT">High</mat-option>
+											<mat-option value="BAS">Low</mat-option>
+										</mat-select>
+									</mat-form-field>
+								</div>
+				      <div class="button-row">
+			                <button mat-raised-button color="primary" matStepperPrevious>Back</button>
+			       	 	<button mat-raised-button color="accent" matStepperNext>Next</button>
+			            </div>
+				    </form>
+				  </mat-step>
+				  <mat-step>
+				    <ng-template matStepLabel>Done</ng-template>
+				    You are now done.
+				    <div class="button-row m-t-20">
+				      
+				      <button mat-raised-button color="warn" (click)="stepperoptional.reset()">Reset</button>
+					  <button mat-raised-button style="background-color: #10c510;" matStepperPrevious (click)="Submit()">Submit</button>
+				    </div>
+				  </mat-step>
+				</mat-horizontal-stepper>
+			</mat-card-content>
+		</mat-card>    
+	</div>
+</div>

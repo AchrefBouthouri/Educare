@@ -1,0 +1,398 @@
+
+<div id="topbar" class="d-flex align-items-center fixed-top">
+    <div class="container d-flex justify-content-center justify-content-md-between">
+       <div class="contact-info d-flex align-items-center"> <i class="bi bi-phone d-flex align-items-center"><span>+216 71 200 300</span></i> <i class="bi bi-clock d-flex align-items-center ms-4"><span> Mon-Sat: 11AM - 23PM</span></i></div>
+    </div>
+ </div>
+
+ <header id="header" class="fixed-top d-flex align-items-cente">
+
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-lg-between">
+
+       <h1 class="logo me-auto me-lg-0">
+         <img class="img" src='assets/images/esprit2.jpg' width="100" height="80" style="margin-right: 10px"><a  href="/restaurant">Restaurant</a></h1>
+       <nav id="navbar" class="navbar order-last order-lg-0">
+          <ul>
+             <li><a class="nav-link scrollto active" href="/restaurant">Home</a></li>
+             <li><a class="nav-link scrollto" href="/calories">Calories</a></li>
+             <li><a class="nav-link scrollto" href="#menu">Menu</a></li>
+             <li><a class="nav-link scrollto" href="#specials">Specials</a></li>
+             <li><a class="nav-link scrollto" href="#events">Events</a></li>
+             <li class="dropdown">
+                <a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
+                <ul>
+                   <li><a href="#">Drop Down 1</a></li>
+                   <li class="dropdown">
+                      <a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
+                      <ul>
+                         <li><a href="#">Deep Drop Down 1</a></li>
+                         <li><a href="#">Deep Drop Down 2</a></li>
+                         <li><a href="#">Deep Drop Down 3</a></li>
+                         <li><a href="#">Deep Drop Down 4</a></li>
+                         <li><a href="#">Deep Drop Down 5</a></li>
+                      </ul>
+                   </li>
+                   <li><a href="#">Drop Down 2</a></li>
+                   <li><a href="#">Drop Down 3</a></li>
+                   <li><a href="#">Drop Down 4</a></li>
+                </ul>
+             </li>
+             <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+          </ul>
+          <i class="bi bi-list mobile-nav-toggle"></i>
+       </nav>
+      <a href="#" class="book-a-table-btn scrollto d-none d-lg-flex" id="order-btn">Order a meal</a>
+    </div>
+ </header>
+ <section id="hero" class="d-flex align-items-center">
+    <div class="container position-relative text-center text-lg-start" data-aos="zoom-in" data-aos-delay="100">
+       <div class="row">
+          <div class="col-lg-8">
+             <h1>Welcome to the <span>Restaurant</span></h1>
+             <h2>Indulge in the most delectable meals at the palm of your hand!</h2>
+             <div class="btns"> <a href="#menu" class="btn-menu animated fadeInUp scrollto">Our Menu</a> <a href="#book-a-table" class="btn-book animated fadeInUp scrollto">Book a Table</a></div>
+          </div>
+       </div>
+    </div>
+ </section>
+ <main id="main">
+    <section id="about" class="about">
+       <div class="container" data-aos="fade-up">
+          <div class="row">
+             <div class="col-lg-6 order-1 order-lg-2" data-aos="zoom-in" data-aos-delay="100">
+             </div>
+             <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
+
+
+
+             </div>
+
+
+            <div class="meal-reminder">
+              <h2 class="meal-reminder__title">Next Meal:</h2>
+              <p class="meal-reminder__time">{{ nextMealTime }}</p>
+            </div>
+          </div>
+       </div>
+    </section>
+    <section id="why-us" class="why-us">
+       <div class="container" data-aos="fade-up">
+          <div class="section-title">
+             <h2>Why Us</h2>
+             <p>Why Choose Our Restaurant</p>
+          </div>
+          <div class="row">
+             <div class="col-lg-4">
+                <div class="box" data-aos="zoom-in" data-aos-delay="100">
+                   <span>01</span>
+                   <h4>the best food</h4>
+                   <p>Exceptional culinary experience guaranteed </p>
+                </div>
+             </div>
+             <div class="col-lg-4 mt-4 mt-lg-0">
+                <div class="box" data-aos="zoom-in" data-aos-delay="200">
+                   <span>02</span>
+                   <h4>the freshest of ingredients</h4>
+                   <p>Unmatched quality and freshness of ingredients</p>
+                </div>
+             </div>
+             <div class="col-lg-4 mt-4 mt-lg-0">
+                <div class="box" data-aos="zoom-in" data-aos-delay="300">
+                   <span>03</span>
+                   <h4>the best hospitality</h4>
+                   <p>Warm hospitality and impeccable service every time</p>
+                </div>
+             </div>
+          </div>
+       </div>
+    </section>
+    <section id="menu" class="menu section-bg">
+       <div class="container" data-aos="fade-up">
+          <div class="section-title">
+             <h2>Menu</h2>
+             <p>Check Our Tasty Menu</p>
+          </div>
+          <div class="row" data-aos="fade-up" data-aos-delay="100">
+             <div class="col-lg-12 d-flex justify-content-center">
+                <ul id="menu-flters">
+                   <li data-filter="*" class="filter-active">All</li>
+                   <li data-filter=".filter-starters">Starters</li>
+                   <li data-filter=".filter-salads">Salads</li>
+                   <li data-filter=".filter-specialty">Specialty</li>
+                </ul>
+             </div>
+          </div>
+          <div class="row menu-container" data-aos="fade-up" data-aos-delay="200">
+             <div class="col-lg-6 menu-item filter-starters">
+                <img src="assets/img/menu/lobster-bisque.jpg" class="menu-img" alt="">
+                <div class="menu-content"> <a href="#">Lobster Bisque</a><span>$5.95</span></div>
+                <div class="menu-ingredients"> Lorem, deren, trataro, filede, nerada</div>
+             </div>
+             <div class="col-lg-6 menu-item filter-specialty">
+                <img src="assets/img/menu/bread-barrel.jpg" class="menu-img" alt="">
+                <div class="menu-content"> <a href="#">Bread Barrel</a><span>$6.95</span></div>
+                <div class="menu-ingredients"> Lorem, deren, trataro, filede, nerada</div>
+             </div>
+             <div class="col-lg-6 menu-item filter-starters">
+                <img src="assets/img/menu/cake.jpg" class="menu-img" alt="">
+                <div class="menu-content"> <a href="#">Crab Cake</a><span>$7.95</span></div>
+                <div class="menu-ingredients"> A delicate crab cake served on a toasted roll with lettuce and tartar sauce</div>
+             </div>
+             <div class="col-lg-6 menu-item filter-salads">
+                <img src="assets/img/menu/caesar.jpg" class="menu-img" alt="">
+                <div class="menu-content"> <a href="#">Caesar Selections</a><span>$8.95</span></div>
+                <div class="menu-ingredients"> Lorem, deren, trataro, filede, nerada</div>
+             </div>
+             <div class="col-lg-6 menu-item filter-specialty">
+                <img src="assets/img/menu/tuscan-grilled.jpg" class="menu-img" alt="">
+                <div class="menu-content"> <a href="#">Tuscan Grilled</a><span>$9.95</span></div>
+                <div class="menu-ingredients"> Grilled chicken with provolone, artichoke hearts, and roasted red pesto</div>
+             </div>
+             <div class="col-lg-6 menu-item filter-starters">
+                <img src="assets/img/menu/mozzarella.jpg" class="menu-img" alt="">
+                <div class="menu-content"> <a href="#">Mozzarella Stick</a><span>$4.95</span></div>
+                <div class="menu-ingredients"> Lorem, deren, trataro, filede, nerada</div>
+             </div>
+             <div class="col-lg-6 menu-item filter-salads">
+                <img src="assets/img/menu/greek-salad.jpg" class="menu-img" alt="">
+                <div class="menu-content"> <a href="#">Greek Salad</a><span>$9.95</span></div>
+                <div class="menu-ingredients"> Fresh spinach, crisp romaine, tomatoes, and Greek olives</div>
+             </div>
+             <div class="col-lg-6 menu-item filter-salads">
+                <img src="assets/img/menu/spinach-salad.jpg" class="menu-img" alt="">
+                <div class="menu-content"> <a href="#">Spinach Salad</a><span>$9.95</span></div>
+                <div class="menu-ingredients"> Fresh spinach with mushrooms, hard boiled egg, and warm bacon vinaigrette</div>
+             </div>
+             <div class="col-lg-6 menu-item filter-specialty">
+                <img src="assets/img/menu/lobster-roll.jpg" class="menu-img" alt="">
+                <div class="menu-content"> <a href="#">Lobster Roll</a><span>$12.95</span></div>
+                <div class="menu-ingredients"> Plump lobster meat, mayo and crisp lettuce on a toasted bulky roll</div>
+             </div>
+          </div>
+       </div>
+    </section>
+    <section id="specials" class="specials">
+       <div class="container" data-aos="fade-up">
+          <div class="section-title">
+            <div fxLayout="row" fxLayoutWrap="wrap">
+              <div fxFlex.gt-sm="100%" fxFlex="100">
+                <mat-card *ngFor="let capacity of capacity" style="color: #00A1FC" >
+                  <mat-card-content style="background-color: #2f3d4a">
+                    <mat-card-title>Remaining Seats: {{ capacity.value}}</mat-card-title>
+
+                  </mat-card-content>
+                </mat-card>
+              </div>
+            </div>
+            <h2>Create a order</h2>
+
+
+          </div>
+          <div class="row" data-aos="fade-up" data-aos-delay="100">
+             <div class="col-lg-3">
+
+                   <mat-card-title></mat-card-title>
+
+
+             </div>
+
+             <div class="col-lg-9 mt-4 mt-lg-0">
+                <div class="tab-content">
+                   <div class="tab-pane active show" id="tab-1">
+                      <div class="row">
+                         <div class="col-lg-8 details order-2 order-lg-1">
+                         </div>
+                        <form  (ngSubmit)="createOrder()" class="my-form">
+                          <div class="col-lg-4 text-center order-1 order-lg-2"> <img src="assets/img/specials-1.png" alt="" class="img-fluid"></div>
+
+                          <div class="form-group">
+                            <label for="menuName">Menu Name:</label>
+                            <input matInput id="menuName" name="menuName" [(ngModel)]="menuName" required minlength="3" maxlength="20">
+                            <div class="invalid-feedback">Please enter a valid menu name (3-20 characters).</div>
+                          </div>
+                          <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input matInput id="email" type="email" name="email" [(ngModel)]="email" required>
+                            <div class="invalid-feedback">Please enter a valid email address.</div>
+                          </div>
+                          <div class="form-group">
+                            <label for="token">Token:</label>
+                            <input matInput id="token" name="token" [(ngModel)]="token" required pattern="[a-zA-Z0-9]{6}">
+                            <div class="invalid-feedback">Please enter a valid token (6 alphanumeric characters).</div>
+                          </div>
+                          <div class="form-group">
+                            <label for="currency">Currency:</label>
+                            <select matNativeControl id="currency" name="currency" [(ngModel)]="currency" required>
+                              <option value="" disabled selected>Select a currency</option>
+                              <option value="USD">USD</option>
+                              <option value="EUR">EUR</option>
+                              <option value="JPY">JPY</option>
+                            </select>
+                            <div class="invalid-feedback">Please select a currency.</div>
+                          </div>
+
+
+                          <button type="submit" class="btn btn-primary"> Order </button>
+
+                        </form>
+
+
+                      </div>
+                   </div>
+                   <div class="tab-pane" id="tab-2">
+                      <div class="row">
+                         <div class="col-lg-8 details order-2 order-lg-1">
+                            <h3>Et blanditiis nemo veritatis excepturi</h3>
+                            <p class="fst-italic">Qui laudantium consequatur laborum sit qui ad sapiente dila parde sonata raqer a videna mareta paulona marka</p>
+                            <p>Ea ipsum voluptatem consequatur quis est. Illum error ullam omnis quia et reiciendis sunt sunt est. Non aliquid repellendus itaque accusamus eius et velit ipsa voluptates. Optio nesciunt eaque beatae accusamus lerode pakto madirna desera vafle de nideran pal</p>
+                         </div>
+                         <div class="col-lg-4 text-center order-1 order-lg-2"> <img src="assets/img/specials-2.png" alt="" class="img-fluid"></div>
+                      </div>
+                   </div>
+                   <div class="tab-pane" id="tab-3">
+                      <div class="row">
+                         <div class="col-lg-8 details order-2 order-lg-1">
+                            <h3>Impedit facilis occaecati odio neque aperiam sit</h3>
+                            <p class="fst-italic">Eos voluptatibus quo. Odio similique illum id quidem non enim fuga. Qui natus non sunt dicta dolor et. In asperiores velit quaerat perferendis aut</p>
+                            <p>Iure officiis odit rerum. Harum sequi eum illum corrupti culpa veritatis quisquam. Neque necessitatibus illo rerum eum ut. Commodi ipsam minima molestiae sed laboriosam a iste odio. Earum odit nesciunt fugiat sit ullam. Soluta et harum voluptatem optio quae</p>
+                         </div>
+                         <div class="col-lg-4 text-center order-1 order-lg-2"> <img src="assets/img/specials-3.png" alt="" class="img-fluid"></div>
+                      </div>
+                   </div>
+                   <div class="tab-pane" id="tab-4">
+                      <div class="row">
+                         <div class="col-lg-8 details order-2 order-lg-1">
+                            <h3>Fuga dolores inventore laboriosam ut est accusamus laboriosam dolore</h3>
+                            <p class="fst-italic">Totam aperiam accusamus. Repellat consequuntur iure voluptas iure porro quis delectus</p>
+                            <p>Eaque consequuntur consequuntur libero expedita in voluptas. Nostrum ipsam necessitatibus aliquam fugiat debitis quis velit. Eum ex maxime error in consequatur corporis atque. Eligendi asperiores sed qui veritatis aperiam quia a laborum inventore</p>
+                         </div>
+                         <div class="col-lg-4 text-center order-1 order-lg-2"> <img src="assets/img/specials-4.png" alt="" class="img-fluid"></div>
+                      </div>
+                   </div>
+                   <div class="tab-pane" id="tab-5">
+                      <div class="row">
+                         <div class="col-lg-8 details order-2 order-lg-1">
+                            <h3>Est eveniet ipsam sindera pad rone matrelat sando reda</h3>
+                            <p class="fst-italic">Omnis blanditiis saepe eos autem qui sunt debitis porro quia.</p>
+                            <p>Exercitationem nostrum omnis. Ut reiciendis repudiandae minus. Omnis recusandae ut non quam ut quod eius qui. Ipsum quia odit vero atque qui quibusdam amet. Occaecati sed est sint aut vitae molestiae voluptate vel</p>
+                         </div>
+                         <div class="col-lg-4 text-center order-1 order-lg-2"> <img src="assets/img/specials-5.png" alt="" class="img-fluid"></div>
+                      </div>
+                   </div>
+                </div>
+             </div>
+          </div>
+       </div>
+    </section>
+    <section id="events" class="events">
+       <div class="container" data-aos="fade-up">
+          <div class="section-title">
+             <h2>Events</h2>
+             <p>Organize Your Events in our Restaurant</p>
+          </div>
+          <div class="events-slider swiper" data-aos="fade-up" data-aos-delay="100">
+             <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                   <div class="row event-item">
+                      <div class="col-lg-6"> <img src="assets/img/event-birthday.jpg" class="img-fluid" alt=""></div>
+                      <div class="col-lg-6 pt-4 pt-lg-0 content">
+                         <h3>Birthday Parties</h3>
+                         <div class="price">
+                            <p><span>$189</span></p>
+                         </div>
+                         <p class="fst-italic"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                         <ul>
+                            <li><i class="bi bi-check-circled"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+                            <li><i class="bi bi-check-circled"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
+                            <li><i class="bi bi-check-circled"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+                         </ul>
+                         <p> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
+                      </div>
+                   </div>
+                </div>
+                <div class="swiper-slide">
+                   <div class="row event-item">
+                      <div class="col-lg-6"> <img src="assets/img/event-private.jpg" class="img-fluid" alt=""></div>
+                      <div class="col-lg-6 pt-4 pt-lg-0 content">
+                         <h3>Private Parties</h3>
+                         <div class="price">
+                            <p><span>$290</span></p>
+                         </div>
+                         <p class="fst-italic"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                         <ul>
+                            <li><i class="bi bi-check-circled"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+                            <li><i class="bi bi-check-circled"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
+                            <li><i class="bi bi-check-circled"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+                         </ul>
+                         <p> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
+                      </div>
+                   </div>
+                </div>
+                <div class="swiper-slide">
+                   <div class="row event-item">
+                      <div class="col-lg-6"> <img src="assets/img/event-custom.jpg" class="img-fluid" alt=""></div>
+                      <div class="col-lg-6 pt-4 pt-lg-0 content">
+                         <h3>Custom Parties</h3>
+                         <div class="price">
+                            <p><span>$99</span></p>
+                         </div>
+                         <p class="fst-italic"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                         <ul>
+                            <li><i class="bi bi-check-circled"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+                            <li><i class="bi bi-check-circled"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
+                            <li><i class="bi bi-check-circled"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+                         </ul>
+                         <p> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
+                      </div>
+                   </div>
+                </div>
+             </div>
+             <div class="swiper-pagination"></div>
+          </div>
+       </div>
+    </section>
+ </main>
+ <footer id="footer">
+    <div class="footer-top">
+       <div class="container">
+          <div class="row">
+             <div class="col-lg-3 col-md-6">
+                <div class="footer-info">
+                   <h3>Restaurant</h3>
+                   <p> Ludhiana <br> Punjab, IND<br><br> <strong>Phone:</strong> +91 **** **** **<br> <strong>Email:</strong> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" >[email&#160;protected]</a><br></p>
+                   <div class="social-links mt-3"> <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a> <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a> <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a> <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a> <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a></div>
+                </div>
+             </div>
+             <div class="col-lg-2 col-md-6 footer-links">
+                <h4>Useful Links</h4>
+                <ul>
+                   <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+                   <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
+                   <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
+                   <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
+                   <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+                </ul>
+             </div>
+             <div class="col-lg-3 col-md-6 footer-links">
+                <h4>Our Services</h4>
+                <ul>
+                   <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
+                   <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
+                   <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
+                   <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
+                   <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
+                </ul>
+             </div>
+             <div class="col-lg-4 col-md-6 footer-newsletter">
+                <h4>Our Newsletter</h4>
+                <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
+                <form action="" method="post"> <input type="email" name="email"><input type="submit" value="Subscribe"></form>
+             </div>
+          </div>
+       </div>
+    </div>
+    <div class="container">
+       <div class="copyright"> &copy; Copyright <strong><span>Restaurant</span></strong>. All Rights Reserved</div>
+       <div class="credits"> Designed by <a href="https://therichpost.com/">therichpost</a></div>
+    </div>
+ </footer>

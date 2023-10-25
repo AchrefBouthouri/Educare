@@ -1,0 +1,57 @@
+.container {
+    margin: 50px auto;
+    max-width: 800px;
+  }
+  .margin {
+        margin: 0px 87px 0px 5px;
+  }
+  .title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+  }
+  .mat-form-field {
+    width: 100%;
+  }
+  
+  .mat-datepicker-toggle {
+    /* position: absolute; */
+    right: 0;
+  }
+  
+  .row {
+    margin-bottom: 10px;
+    display: flex;
+  }
+  
+  button {
+    width: 100%;
+  }
+  
+  @media only screen and (min-width: 768px) {
+    .col-6 {
+      width: 50%;
+      padding: 0 5px;
+    }
+  
+    .col-6-1 {
+        /* width: 50%; */
+        padding: 0 5px;
+      }
+
+    .col-12 {
+      width: 100%;
+      padding: 0 5px;
+    }
+  
+    .mt-4 {
+      margin-top: 40px;
+    }
+  
+    button {
+      width: auto;
+    }
+  }
+  
+  

@@ -1,0 +1,93 @@
+<mat-card>
+	<mat-card-content>
+
+
+	<mat-card-title>Order</mat-card-title>
+            <div fxLayout="row" fxLayoutWrap="wrap">
+                <div fxFlex.gt-sm="100%" fxFlex="100">
+                        <mat-card>
+                                <mat-card-content>
+                                </mat-card-content>
+                                <mat-tab-group>
+                                  <mat-tab label="show all orders">
+                                    <mat-card-content>
+                                      <div class="radio-group-container">
+                                        <mat-radio-group [(ngModel)]="searchOption">
+                                          <!-- <mat-radio-button value="id">ID</mat-radio-button> -->
+                                          <mat-radio-button value="mealname">Meal Name</mat-radio-button>
+                                          <mat-radio-button value="price">Price</mat-radio-button>
+                                        </mat-radio-group>
+                                      </div>
+
+                                      <mat-form-field>
+                                        <input matInput placeholder="Search" class="search-box" [(ngModel)]="searchTerm">
+                                        <button mat-raised-button color="primary" class="search-btn" (click)="filterOrders()">Search</button>
+                                      </mat-form-field>
+
+                                      <mat-card>
+                                        <mat-card-content>
+                                          <mat-card-title>Order</mat-card-title>
+                                          <div fxLayout="row" fxLayoutWrap="wrap">
+                                            <!-- Card column -->
+                                            <div fxFlex.gt-sm="100%" fxFlex="100">
+                                              <mat-card *ngFor="let order of filteredOrders">
+                                                <mat-card-content>
+                                                  <mat-card-title>Order ID: {{ order.id }}</mat-card-title>
+                                                  <p>Menu: {{ order.menu.name }}</p>
+                                                  <p>Order Number: {{ order.orderNumber }}</p>
+                                                  <p>Price: {{ order.price }}</p>
+                                                  <button mat-button color="warn" (click)="deleteOrder(order.id)">Cancel</button>
+                                                  <button mat-button color="primary" (click)="showQRCode(order.id)">QR Code</button>
+                                                </mat-card-content>
+                                              </mat-card>
+                                            </div>
+                                          </div>
+                                        </mat-card-content>
+                                      </mat-card>
+                                    </mat-card-content>
+                                  </mat-tab>
+
+
+
+
+
+
+
+
+
+
+
+                                          <mat-tab label="create order">
+                                            <mat-card-content>
+                                              <mat-card>
+                                                <mat-card-content>
+                                                  <mat-card-title>Create Order</mat-card-title>
+                                                  <form (ngSubmit)="createOrder()">
+                                                    <mat-form-field>
+                                                      <input matInput placeholder="Menu Name" name="menuName" [(ngModel)]="menuName">
+                                                    </mat-form-field>
+                                                    <mat-form-field>
+                                                      <input matInput placeholder="Email" name="email" [(ngModel)]="email">
+                                                    </mat-form-field>
+
+                                                    <mat-form-field>
+                                                      <input matInput placeholder="Token" name="token" [(ngModel)]="token">
+                                                    </mat-form-field>
+                                                    <mat-form-field>
+                                                      <input matInput placeholder="Currency" name="currency" [(ngModel)]="currency">
+                                                    </mat-form-field>
+                                                    <button mat-raised-button color="primary" type="submit">Create Order</button>
+                                                  </form>
+                                                </mat-card-content>
+                                              </mat-card>
+                                            </mat-card-content>
+                                          </mat-tab>
+
+
+                                </mat-tab-group>
+                        </mat-card>
+                </div>
+        </div>
+	</mat-card-content>
+</mat-card>
+

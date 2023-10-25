@@ -1,0 +1,27 @@
+<!-- <p>reclamation works!</p> -->
+<div fxLayout="row" fxLayoutWrap="wrap">
+        <!-- Card column -->
+        <div fxFlex.gt-sm="100%" fxFlex="100">
+                <mat-card>
+                        <mat-card-content>
+                                <mat-card-title>Reclamation</mat-card-title>
+                                <mat-card-subtitle>Manage your complaints</mat-card-subtitle>
+                        </mat-card-content>
+                        <mat-tab-group>
+                                <mat-tab label="List"><mat-card-content>
+                                                <app-listing (selectedId)="onSelectedId($event)"></app-listing>
+                                        </mat-card-content>
+                                </mat-tab>
+                                <mat-tab label="Create"><mat-card-content>
+                                                <app-add></app-add>
+                                        </mat-card-content>
+                                </mat-tab>
+                                <mat-tab label="Deatils" [disabled]="!Id"><mat-card-content>
+                                                <app-details *ngIf="detail" [reclamation]="this.reclamation"></app-details>
+                                        </mat-card-content>
+                                </mat-tab>
+                        </mat-tab-group>
+                </mat-card>
+                <!-- <mat-card><app-rendez-vous></app-rendez-vous></mat-card> -->
+        </div>
+</div>

@@ -1,0 +1,11 @@
+<p>Menu de Semaine</p>
+
+              <div fxLayout="row" fxLayoutWrap="wrap">
+                <!-- Card column -->
+                <div fxFlex.gt-sm="100%" fxFlex="100">
+                  <mat-card *ngFor="let menu of menus">
+                      <mat-card-title>Menu ID: {{ menu.id }}</mat-card-title>
+                      <p>Menu: {{ menu.name }}</p>
+                      
+
+        
